@@ -5,7 +5,6 @@ import argparse
 import bs4
 import getpass
 import http.cookiejar
-import io
 import itertools
 import keyring
 import logging
@@ -19,8 +18,6 @@ import urllib.parse as ulp
 import urllib.request as ulr
 
 
-# AGENDA:
-# - recognize result, correct/incorrect, print. Exit
 
 
 baseURL = "http://projecteuler.net/"
