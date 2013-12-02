@@ -1,3 +1,6 @@
+old/
+captchaExamples/
+
 *.py[cod]
 
 # C extensions
