@@ -22,3 +22,5 @@ Requirements
 You'll need Python 3, and these modules installed: bs4, keyring, png. You can get them by running
 
     pip3 install BeautifulSoup4 keyring pypng
+
+You'll only need pesubmit.py (not pesubmit-utils.py).
