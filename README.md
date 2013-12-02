@@ -3,11 +3,22 @@ pesubmit
 
 A small Python tool to submit [Project Euler](http://projecteuler.net) solutions (by logging in, solving the captcha, and submitting a http post with the provided solution).
 
-Usage:
+Usage (from the command line):
 
     python3 pesubmit.py 1 987654321
+
+or (after you've given it execute permission, `chmod +x pesubmit.py`) just 
+
+    /.pesubmit.py 1 987654321
+
+where `1` is the problem number, and `987654321` is your solution (and no, it's not the correct solution...).
+
+Usage (from Python itself):
+
+    import pesubmit
+    ...
+    pesubmit.submit(1,987654321)
     
-where `1` is the problem number, and `987654321` is your solution (and no, it's not the correct solution...)
 
 ```
 Fabians-MBA-15:pesubmit frl$ ./pesubmit.py 1 987654321
