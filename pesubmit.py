@@ -102,7 +102,7 @@ def bsSolutionWrong(b):
         return True
 
 def bsTooManySubmissions(b):
-    if "You are not permitted" in str(bt.find("div",id="message")):
+    if "You are not permitted" in str(b.find("div",id="message")):
         return True
 
 def getOpenerWithCookieJar():
@@ -141,12 +141,13 @@ def solveCaptcha(opener, b2):
     captcha_elem = b2.find_all("img", attrs={"name":"captcha"})
     captcha_path = ulp.urljoin(baseURL,captcha_elem[0]["src"])
 
-    # logging.debug("CAPTCHA path: {}".format(captcha_path))
+    logging.debug("CAPTCHA path: {}".format(captcha_path))
     # captcha_cached = io.BytesIO(opener.open(captcha_path).read())
     # displayCaptcha(captcha_cached)
+    # captcha_cached.seek(0) # rewind
+    # captcha_pic = png.Reader(file=captcha_cached)
 
-    captcha_cached.seek(0) # rewind
-    captcha_pic = png.Reader(file=captcha_cached)
+    captcha_pic = png.Reader(opener.open(captcha_path))
     pixelsBW = turnImgToBW(captcha_pic)
     cuts = findCuts(pixelsBW)
     digitPics = truncateAndInvertDigits(pixelsBW,cuts)
